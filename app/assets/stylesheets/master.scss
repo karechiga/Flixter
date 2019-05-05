@@ -1,1 +1,17 @@
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Alef');
+
+.navbar {
+  font-family: 'Alef', sans-serif;
+  font-weight: 200;
+  box-shadow: 0px 1px 3px #2a2a2a;
+  background: image_url('whirlpool.png');
+}
+
+.navbar-brand {
+  font-size: 40px;
+  font-family: 'Alef', sans-serif;
+}
+.navbar-light .navbar-brand, .navbar-light .navbar-toggler {
+  color: #de6464;
+}
