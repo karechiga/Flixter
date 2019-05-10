@@ -1,48 +1,61 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Flixter</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>Flixter</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  <body>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <div id="flex-content-container">
     <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <%= link_to 'Flixter', root_path, class: 'navbar-brand' %>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <% if user_signed_in? %>
-            <li class="nav-item">
-              <%= link_to 'My Account', '#', class: 'nav-link' %>
-            </li>
-            <li class="nav-item">
-              <%= link_to 'Sign-Out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
-            </li>
+          <li class="nav-item">
+            <%= link_to 'My Account', '#', class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Sign-Out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+          </li>
           <% else %>
-            <li class="nav-item">
-              <%= link_to 'Sign-In', new_user_session_path, class: 'nav-link' %> 
-            </li>
-            <li class="nav-item">
-              <%= link_to 'Create an Account', new_user_registration_path, class: 'nav-link' %> 
-            </li>
+          <li class="nav-item">
+            <%= link_to 'Sign-In', new_user_session_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Create an Account', new_user_registration_path, class: 'nav-link' %>
+          </li>
           <% end %>
         </ul>
       </div>
     </nav>
 
     <% if notice.present? %>
-      <p class="alert alert-info"><%= notice %></p>
+    <p class="alert alert-info"><%= notice %></p>
     <% end %>
     <% if alert.present? %>
-      <p class="alert alert-danger"><%= alert %></p>
+    <p class="alert alert-danger"><%= alert %></p>
     <% end %>
-
     <%= yield %>
-  </body>
+  </div>
+
+
+  <div id="footer">
+    <div class="container">
+      <b>Footer Here</b>
+      <br />
+      <%= link_to 'Link', '#' %>
+    </div>
+  </div>
+</body>
+
 </html>
